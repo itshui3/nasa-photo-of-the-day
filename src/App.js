@@ -5,6 +5,7 @@ import "./App.css";
 import Heading from './components/APOD/Heading';
 import Image from './components/APOD/Image';
 import Asteroid from './components/asteroid/Asteroid';
+import AsteroidPanel from './components/asteroid/AsteroidPanel';
 
 
 
@@ -54,7 +55,8 @@ function App() {
         <div className="ast-cont">
           {
             ast.map((elem, index) => (
-              <Asteroid key={index} ast={elem} />
+              <AsteroidPanel key={index} ast={elem} />
+
             ))
           }
           <Asteroid ast={ast} />

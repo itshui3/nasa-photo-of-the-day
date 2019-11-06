@@ -5,17 +5,23 @@ export default Asteroid;
 
 function Asteroid({ast}) {
   const {name, close_approach_data} = ast;
-  // console.log(close_approach_data);
-  return (
-    <>
-      <button>Show Asteroid Info for: {name}</button>
+  console.log(ast.close_approach_data);
+  console.log(ast.hasOwnProperty("close_approach_data"));
+  if (ast.hasOwnProperty("close_approach_data")) {
+    return (
       <div className="asteroid">
-        <h2>Name: {ast.name}</h2>
+        <h2>Name: {name}</h2>
         <h3>Potentially Hazardous: {ast.is_potentially_hazardous_asteroid ? 'Yes' : 'No'}</h3>
-        {close_approach_data !== undefined && <Close data={close_approach_data[0]} />}
+        <Close data={close_approach_data} />
       </div>
-    </>
 
-  )
+    )
+  } else {
+    return <div></div>
+
+  }
+
 
 }
+
+//          {ast.close_approach_data ? <Close data={close_approach_data} /> : <div></div>}
