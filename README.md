@@ -2,6 +2,8 @@
 
 This will be a two-module project. In it you will consume the NASA API to fetch the "Astronomy Photo Of The Day" or APOD. Once you fetch the data, you will build a few components that will render different pieces of data in your interface. After the second module (in the [DAY_TWO_README.md](DAY_TWO_README.md) file) you will re-style your app using one of the libraries you learn. 
 
+-> Day 1 <- Consume NASA API to fetch APOD. Will build a few components to render different pieces of data in UI. 
+
 ## Instructions
 
 ---
@@ -109,7 +111,12 @@ return (
 
 Do not attempt stretch problems until MVP has been reached and a final commit has been made.
 
-- Notice the optional query param `date`? You can pass a different date in your url like this `https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2012-03-14` to get the APOD from a different date. Add a date dropdown that allows you to select a different date and see that APOD. This will be quite a bit of work, but it will be a fantastic exercise to go through a little more complicated logic and interaction in your app. This is also a very common type of interaction, so it would be good to try this out
+- Notice the optional query param `date`? You can pass a different date in your url like this `https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2012-03-14` to get the APOD from a different date. 
+Add a date dropdown that allows you to select a different date and see that APOD.
+-> Dropdown will allow user interaction to change state based on selection <-
+-> May have to set useEffect dependencies to include the 'date' state so it updates automatically <-
+ This will be quite a bit of work, but it will be a fantastic exercise to go through a little more complicated logic and interaction in your app. This is also a very common type of interaction, so it would be good to try this out 
+ [User interaction updates state, state triggers hook which renders a different UI]
 - Make another app that consumes another one of NASA's other APIs listed on the same website
 
 

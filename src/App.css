@@ -31,3 +31,8 @@
     transform: rotate(360deg);
   }
 }
+
+.apod {
+  width: 400px;
+  height: auto;
+}
