@@ -54,12 +54,15 @@ function App() {
         </div>
         <div className="ast-cont">
           {
-            ast.map((elem, index) => (
-              <AsteroidPanel key={index} ast={elem} />
-
-            ))
+            ast.map((elem, index) => {
+              if(elem.close_approach_data[0]) {
+                return <AsteroidPanel key={index} ast={elem} data={elem.close_approach_data[0]} />
+              } else {
+                return <AsteroidPanel key={index} ast={elem} />
+                console.log("No Data");
+              }
+            })
           }
-          <Asteroid ast={ast} />
         </div>
 
 
