@@ -1,6 +1,17 @@
+//import exports
 import React, {useState, useEffect} from "react";
+import styled from 'styled-components';
+import { Button, Alert } from "reactstrap";
 
 export default Heading;
+
+const StyledButton = styled.button`
+
+`;
+
+const CenterAlert = styled(Alert)`
+  text-align: center;
+`;
 
 function Heading({data, setDisplayImage, displayImage}) {
 
@@ -15,11 +26,11 @@ function Heading({data, setDisplayImage, displayImage}) {
   }, [displayImage])
 
   return (
-    <div className="header">
-      <button onClick={() => setDisplayImage(!displayImage)}>{btnText}</button>
+    <CenterAlert color="secondary">
       <h1>{data.title}</h1>
       <h3>{data.date}</h3>
-    </div>
+      <Button onClick={() => setDisplayImage(!displayImage)} type="success">{btnText}</Button>
+    </CenterAlert>
   )
 
 }

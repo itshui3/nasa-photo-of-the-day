@@ -1,16 +1,18 @@
 import React, {useState, useEffect} from 'react';
+import { Button, Col } from 'reactstrap';
 import Asteroid from './Asteroid';
 
 export default AsteroidPanel;
 
 function AsteroidPanel({ast, data}) {
-  console.log(ast);
   const {name} = ast;
   const [show, setShow] = useState(false);
-  return (
-    <>
-    <button onClick={() => setShow(!show)}>Show Asteroid Info for: {name}</button>
-    {(show) && <Asteroid ast={ast} data={data} />}
-    </>
-  )
+
+    return (
+      <Col>
+        <Button onClick={() => setShow(!show)}>Show Asteroid Info for: {name}</Button>
+        {(show) && <Asteroid ast={ast} />}
+      </Col>
+    )
+ 
 }
